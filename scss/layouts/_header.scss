@@ -7,27 +7,39 @@
 
 .header {
     background: var(--header-bg-color);
-    padding: 30px 0;
-
-    @include abstracts.breakpoint(lg) {
-        width: 100px;
-    }
-    @include abstracts.breakpoint(sm) {
-        width: 50px;
-    }
 }
 
 .top-bar {
     @extend %flexItemCenter;
+    padding: 30px 0;
+
+    @include abstracts.breakpoint(lg) {
+        padding: 24px 0;
+    }
+    @include abstracts.breakpoint(sm) {
+        padding: 16px 0;
+    }
+    &__more {
+        display: none;
+        @include abstracts.breakpoint(lg) {
+            display: block;
+        }
+    }
 }
 
 .navbar {
     margin-left: 144px;
-    margin-right: auto;
+    @include abstracts.breakpoint(xl) {
+        margin-left: 50px;
+    }
     &__list {
         display: flex;
         align-items: center;
         gap: 30px;
+    }
+
+    @include abstracts.breakpoint(lg) {
+        display: none;
     }
 
     &__link {
@@ -46,7 +58,7 @@
 
 .top-act {
     @extend %flexItemCenter;
-
+    margin-left: auto;
     gap: 20px;
     height: 50px;
 
@@ -61,9 +73,18 @@
     &__search {
         padding: 13px;
         cursor: pointer;
+        @include abstracts.breakpoint(lg) {
+            display: none;
+        }
     }
     &__group {
         padding: 10px 20px;
+        @include abstracts.breakpoint(md) {
+            display: none;
+        }
+    }
+    &__btn {
+        padding: 0;
     }
 
     &__icon {
