@@ -35,8 +35,7 @@
         margin-left: 50px;
     }
     &__list {
-        display: flex;
-        align-items: center;
+        @extend %flexItemCenter;
     }
 
     @include abstracts.breakpoint(lg) {
