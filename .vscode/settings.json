@@ -1,3 +1,4 @@
 {
-    "cSpell.words": ["grocerymart"]
+    "cSpell.words": ["grocerymart"],
+    "editor.formatOnSave": true
 }
