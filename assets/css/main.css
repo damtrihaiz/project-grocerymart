@@ -1392,11 +1392,12 @@ select {
 
 .top-menu {
   --menu-column-width: 292px;
+  --max-menu-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
   position: relative;
 }
 .top-menu__main {
   width: var(--menu-column-width);
-  height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+  height: var(--max-menu-height);
   border-right: 1px solid var(--top-menu-border-color);
   overflow-y: auto;
 }
@@ -1428,12 +1429,8 @@ select {
   position: absolute;
   right: 0;
   bottom: 0;
-  display: flex;
   width: 24px;
   height: 24px;
-  padding: 3px;
-  justify-content: center;
-  align-items: center;
   object-fit: contain;
   filter: var(--menu-column-icon-color);
 }
@@ -1471,6 +1468,14 @@ select {
   inset: 0 0 0 var(--menu-column-width);
   padding-left: var(--inner-padding);
   overflow-y: auto;
+}
+.sub-menu__not-main {
+  position: initial;
+  inset: initial;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-left: 0;
+  height: var(--max-menu-height);
 }
 
 html {
