@@ -1,4 +1,4 @@
-@use "../abstracts";
+@use '../abstracts';
 
 %flexItemCenter {
     display: flex;
@@ -25,12 +25,12 @@
         padding: 16px 0;
     }
 
-    &__more {
-        display: none;
-        @include abstracts.breakpoint(lg) {
-            display: block;
-        }
-    }
+    // &__more {
+    //     display: none;
+    //     @include abstracts.breakpoint(lg) {
+    //         display: block;
+    //     }
+    // }
 }
 
 .navbar {
@@ -87,15 +87,9 @@
     &__search {
         padding: 13px;
         cursor: pointer;
-        @include abstracts.breakpoint(lg) {
-            display: none;
-        }
     }
     &__group {
         padding: 10px 20px;
-        @include abstracts.breakpoint(md) {
-            display: none;
-        }
     }
     &__btn {
         padding: 0;
