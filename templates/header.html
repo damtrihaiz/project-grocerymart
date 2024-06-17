@@ -1,7 +1,7 @@
 <div class="container">
     <div class="top-bar">
         <!-- More -->
-        <button class="top-bar__more d-none d-lg-block">
+        <button class="top-bar__more js-toggle d-none d-lg-block" toggle-target="#navbar">
             <img src="./assets/icons/more.svg" alt="" class="icon top-bar__more-icon" />
         </button>
         <!-- logo -->
@@ -10,7 +10,10 @@
             <h1 class="logo__title">grocerymart</h1>
         </a>
         <!-- navbar -->
-        <div class="navbar">
+        <div id="navbar" class="navbar hide">
+            <button class="navbar__close-btn js-toggle" toggle-target="#navbar">
+                <img src="./assets/icons/arrow-left.svg" alt="" />
+            </button>
             <ul class="navbar__list js-dropdown-list">
                 <!-- Navbar item 1 -->
                 <li class="navbar__item">
@@ -4621,6 +4624,7 @@
                 </li>
             </ul>
         </div>
+        <div class="navbar__overlay js-toggle" toggle-target="#navbar"></div>
         <!-- Actions -->
         <div class="top-act">
             <button class="top-act__search d-lg-none">
