@@ -1378,6 +1378,8 @@ img {
   .navbar__list {
     flex-direction: column;
     align-items: flex-start;
+    overflow-y: auto;
+    height: calc(100% - 15px);
   }
 }
 .navbar__item:hover .dropdown {
@@ -1386,9 +1388,6 @@ img {
 @media (max-width: 991.98px) {
   .navbar__item {
     width: 100%;
-  }
-  .navbar__item:hover .dropdown {
-    display: none;
   }
 }
 .navbar__link {
@@ -1503,6 +1502,13 @@ img {
   color: var(--dropdown-text-color);
   display: none;
 }
+@media (max-width: 991.98px) {
+  .dropdown {
+    display: block;
+    position: initial;
+    padding-top: 0;
+  }
+}
 .dropdown__inner {
   --inner-padding: 30px;
   position: relative;
@@ -1520,6 +1526,18 @@ img {
   translate: -50%;
   filter: var(--dropdown-arrow-color);
 }
+@media (max-width: 991.98px) {
+  .dropdown__inner {
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+    padding-top: 0;
+    --inner-padding: 40px;
+  }
+  .dropdown__inner::before {
+    content: none;
+  }
+}
 
 .top-menu {
   --menu-column-width: 292px;
@@ -1531,6 +1549,13 @@ img {
   height: var(--max-menu-height);
   border-right: 1px solid var(--top-menu-border-color);
   overflow-y: auto;
+}
+@media (max-width: 991.98px) {
+  .top-menu__main {
+    width: 100%;
+    height: auto;
+    border-right: none;
+  }
 }
 
 .menu-column {
@@ -1549,6 +1574,11 @@ img {
 @media (max-width: 1199.98px) {
   .menu-column__icon {
     display: none;
+  }
+}
+@media (max-width: 991.98px) {
+  .menu-column__icon {
+    display: block;
   }
 }
 .menu-column__icon-1 {
@@ -1574,8 +1604,18 @@ img {
   line-height: 150%;
   margin-top: 4px;
 }
+@media (max-width: 991.98px) {
+  .menu-column__heading {
+    margin-bottom: 19px;
+  }
+}
 .menu-column__list {
   margin-top: 19px;
+}
+@media (max-width: 991.98px) {
+  .menu-column__list {
+    margin-top: 0;
+  }
 }
 .menu-column__item--active .sub-menu {
   display: grid;
@@ -1599,6 +1639,14 @@ img {
   inset: 0 0 0 var(--menu-column-width);
   padding-left: var(--inner-padding);
   overflow-y: auto;
+}
+@media (max-width: 991.98px) {
+  .sub-menu {
+    position: initial;
+    grid-template-columns: 1fr;
+    padding-left: 0;
+    margin-top: 7px;
+  }
 }
 .sub-menu__not-main {
   position: initial;
