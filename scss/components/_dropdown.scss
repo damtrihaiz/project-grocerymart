@@ -34,8 +34,7 @@
             border-radius: 0;
             background-color: transparent;
             box-shadow: none;
-            padding-top: 0;
-            --inner-padding: 40px;
+            padding: 0 40px;
 
             &::before {
                 content: none;
@@ -162,5 +161,9 @@
         grid-template-columns: repeat(4, 1fr);
         padding-left: 0;
         height: var(--max-menu-height);
+        @include abstracts.breakpoint(lg) {
+            grid-template-columns: 1fr;
+            height: auto;
+        }
     }
 }
