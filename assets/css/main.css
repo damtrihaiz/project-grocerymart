@@ -1389,6 +1389,12 @@ img {
   .navbar__item {
     width: 100%;
   }
+  .navbar__item:hover .dropdown {
+    display: none;
+  }
+  .navbar__item--active .dropdown {
+    display: block !important;
+  }
 }
 .navbar__link {
   gap: 6px;
@@ -1408,6 +1414,15 @@ img {
 }
 .navbar__arrow {
   margin-top: 3px;
+}
+@media (max-width: 991.98px) {
+  .navbar__arrow {
+    rotate: -90deg;
+    transition: rotate 0.3s;
+  }
+}
+.navbar__item--active .navbar__arrow {
+  rotate: 0deg;
 }
 
 .top-act, .top-act__group, .top-act__search {
@@ -1504,7 +1519,6 @@ img {
 }
 @media (max-width: 991.98px) {
   .dropdown {
-    display: block;
     position: initial;
     padding-top: 0;
   }
