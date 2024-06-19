@@ -170,12 +170,23 @@ function initJsToggle() {
 
 window.addEventListener('template-loaded', () => {
     const links = $$('.js-dropdown-list > li > a');
+    const submenu = $$('.js-menu-list > li > a');
 
     links.forEach((link) => {
         link.onclick = () => {
             if (window.innerWidth > 991) return;
             const item = link.closest('li');
             item.classList.toggle('navbar__item--active');
+        };
+    });
+    submenu.forEach((link) => {
+        link.dataset.clickCount = 0;
+        link.onclick = () => {
+            if (window.innerWidth > 991) return;
+            link.dataset.clickCount = parseInt(link.dataset.clickCount) + 1;
+            if (link.dataset.clickCount < 2) return;
+            const item = link.closest('li');
+            item.classList.toggle('menu-column__item--hide');
         };
     });
 });

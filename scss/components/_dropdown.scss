@@ -39,6 +39,9 @@
                 content: none;
             }
         }
+        @include abstracts.breakpoint(sm) {
+            padding: 0 20px;
+        }
     }
 }
 
@@ -63,9 +66,13 @@
 .menu-column {
     display: flex;
     gap: 14px;
+    & + .menu-column {
+        margin-top: 19px;
+    }
 
-    + .menu-column {
-        margin-top: 20px;
+    @include abstracts.breakpoint(lg) {
+        margin-top: 0;
+        margin-bottom: 19px;
     }
 
     &__icon {
@@ -110,7 +117,7 @@
     }
 
     &__list {
-        margin-top: 19px;
+        margin-top: 15px;
         @include abstracts.breakpoint(lg) {
             margin-top: 0;
         }
@@ -121,6 +128,17 @@
             .sub-menu {
                 display: grid;
             }
+            .navbar__arrow {
+                rotate: 0deg !important;
+            }
+        }
+        &--hide {
+            .sub-menu {
+                display: none;
+            }
+            .navbar__arrow {
+                rotate: -90deg !important;
+            }
         }
     }
 
@@ -130,11 +148,20 @@
         color: var(--menu-column-link-color);
     }
     &__link {
-        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 7px 0;
         font-size: 1.4rem;
         font-weight: 400;
         line-height: 142.857%;
+
+        @include abstracts.breakpoint(lg) {
+            .navbar__arrow {
+                rotate: -90deg;
+                transition: rotate 0.3s;
+            }
+        }
     }
 }
 
@@ -151,6 +178,8 @@
         grid-template-columns: 1fr;
         padding-left: 0;
         margin-top: 7px;
+    }
+    &__column {
     }
 
     &__not-main {
