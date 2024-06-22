@@ -190,3 +190,12 @@ window.addEventListener('template-loaded', () => {
         };
     });
 });
+
+/**Đổi màu button like product */
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.like-btn').forEach((button) => {
+        button.addEventListener('click', function () {
+            this.classList.toggle('like-btn--liked');
+        });
+    });
+});

@@ -26,7 +26,7 @@ $gutters: (
     5: 3,
 );
 
-$grid-columns: 12;
+$grid-columns: 12 !default;
 $grid-gutter-width: 30px !default;
 
 %gutter-padding {
@@ -37,7 +37,7 @@ $grid-gutter-width: 30px !default;
 .container-fluid {
     --grid-gutter-x: #{$grid-gutter-width};
     --grid-gutter-y: 0;
-    width: 100%;
+    width: 1370px;
     margin-left: auto;
     margin-right: auto;
     @extend %gutter-padding;
@@ -125,7 +125,7 @@ $grid-gutter-width: 30px !default;
     $infix: '-#{$breakpoint}';
     @include make-media-query($dimension) {
         .container {
-            width: $max-width;
+            max-width: $max-width;
         }
         @include make-row-columns($infix);
         @include make-columns($infix);
