@@ -39,3 +39,48 @@
         display: none;
     }
 }
+
+// Buttons
+
+.btn {
+    height: 46px;
+    padding: 0 20px;
+
+    font-weight: 500;
+    font-size: 1.6rem;
+
+    border-radius: 6px;
+    background-color: #f8f8fb;
+
+    user-select: none;
+
+    &--text {
+        color: #9e9da8;
+        background-color: transparent;
+        font-weight: 400;
+    }
+
+    &--primary {
+        background-color: #ffb700;
+    }
+
+    &--outline {
+        background-color: transparent;
+        border-radius: 10px;
+        border: 1px solid #d2d1d6;
+    }
+
+    &--rounded {
+        border-radius: 99px;
+    }
+
+    &[disabled],
+    &--disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
