@@ -6,11 +6,12 @@
 }
 
 .filter {
+    --filter-padding: 30px;
     position: absolute;
     right: 0;
     top: 66px;
 
-    padding: 30px;
+    padding: 32px 0;
     border-radius: 20px;
 
     background-color: var(--filter-form-bg);
@@ -18,16 +19,13 @@
     transition: opacity, visibility;
     transition-duration: 0.2s;
 
-    @include abstracts.screen(xl) {
-        height: calc(100vh - 100px);
-        padding-bottom: 0;
-        overflow-y: auto;
-        overscroll-behavior: contain;
-    }
-
     @include abstracts.screen(sm) {
-        width: 80vw;
-        padding: 0 20px;
+        --filter-padding: 20px;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        inset: 0;
+        border-radius: 0;
     }
 
     &.hide {
@@ -47,17 +45,20 @@
         font-size: 2.2rem;
         font-weight: 500;
         line-height: 145.455%;
+        padding-left: var(--filter-padding);
     }
     &__form {
         margin-top: 30px;
-        margin-bottom: 18px;
+        // margin-bottom: 18px;
 
         @include abstracts.screen(xl) {
             margin-bottom: 0;
         }
 
         &-label {
-            @extend .filter__heading;
+            font-size: 2.2rem;
+            font-weight: 500;
+            line-height: 145.455%;
             display: block;
             &--small {
                 font-size: 1.4rem;
@@ -70,6 +71,7 @@
             margin-top: 20px;
             &--inline {
                 display: flex;
+                // grid-template-columns: 1fr 1fr;
                 gap: 30px;
             }
         }
@@ -127,7 +129,7 @@
                 width: 121px;
                 height: 36px;
                 padding: 8px 12px;
-                @include abstracts.screen(sm) {
+                @include abstracts.screen(xl) {
                     width: 100%;
                 }
             }
@@ -146,6 +148,9 @@
                 font-weight: 400;
                 color: #9e9da8;
             }
+            @include abstracts.screen(sm) {
+                font-size: 1.6rem;
+            }
         }
 
         &-input-icon {
@@ -162,6 +167,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex: 1;
 
             padding: 0 14px;
             min-width: var(--width, 109px);
@@ -209,8 +215,16 @@
     }
 
     &__content {
+        max-height: calc(100vh - 350px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: 0 var(--filter-padding);
         @include abstracts.screen(xl) {
             flex-direction: column;
+        }
+        @include abstracts.screen(sm) {
+            max-height: calc(100vh - 200px);
+            padding-bottom: 60px;
         }
     }
 
@@ -226,12 +240,11 @@
         justify-content: end;
         gap: 10px;
         margin-top: 32px;
+        padding: 0 var(--filter-padding);
 
-        @include abstracts.screen(xl) {
+        @include abstracts.screen(sm) {
             position: sticky;
-            bottom: 0;
-            margin-top: 18px;
-            padding-bottom: 20px;
+            bottom: 30px;
             background-color: var(--filter-form-bg);
         }
 
@@ -240,7 +253,7 @@
             padding: 0 10px;
             height: 38px;
             @include abstracts.screen(sm) {
-                flex: 1;
+                height: 40px;
             }
         }
 
