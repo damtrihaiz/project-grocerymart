@@ -10,6 +10,10 @@ html {
     --top-act-group-shadow: rgba(237, 237, 246, 0.2);
     --top-act-group-separate: #ededf6;
 
+    --footer-color: #0071dc;
+    --footer-bg-color: var(--header-bg-color);
+    --footer-text-color: #7f7e82;
+
     @include abstracts.screen(lg) {
         --header-bg-color: #fff;
         --header-box-shadow-color: rgba(237, 237, 246, 0.2);

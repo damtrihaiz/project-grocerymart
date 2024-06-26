@@ -43,15 +43,19 @@
 // Buttons
 
 .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     height: 46px;
     padding: 0 20px;
+    border-radius: 6px;
 
     font-weight: 500;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 
-    border-radius: 6px;
     background-color: #f8f8fb;
-
+    white-space: nowrap;
     user-select: none;
 
     &--text {
@@ -61,6 +65,7 @@
     }
 
     &--primary {
+        color: #171c28;
         background-color: #ffb700;
     }
 

@@ -33,6 +33,11 @@
         visibility: hidden;
     }
 
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
     &__arrow {
         height: 20.5px;
         position: absolute;
