@@ -1,6 +1,11 @@
 @use '../abstracts';
 
 .form {
+    &:has(:invalid) &__submit-btn {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
     &__group {
         margin-top: 30px;
 
@@ -8,6 +13,29 @@
             display: flex;
             align-items: center;
         }
+    }
+
+    &__group:has(:invalid):has(&__input:not(:placeholder-shown)) {
+        .form__text-input {
+            border-color: red;
+            background-color: rgba($color: red, $alpha: 0.1);
+        }
+        .form__error,
+        .form__input-icon--error {
+            display: block;
+        }
+        .form__input-icon {
+            display: none;
+        }
+    }
+
+    &__error {
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: red;
+        text-align: left;
+        display: none;
     }
 
     &__text-input {
@@ -34,6 +62,12 @@
 
         &-icon {
             margin-left: 12px;
+
+            &--error {
+                display: none;
+                margin-left: 12px;
+                animation: shake 0.6s;
+            }
         }
 
         &::placeholder {
@@ -46,15 +80,42 @@
     }
 
     &__checkbox {
+        position: relative;
         display: flex;
         align-items: center;
-        gap: 10px;
+        user-select: none;
 
-        &-input {
-            width: 18.5px;
-            height: 18.5px;
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
         }
+
+        &::before {
+            width: 20px;
+            height: 20px;
+            border: 1.5px solid #9e9da8;
+            border-radius: 5px;
+        }
+
+        &:has(:checked) {
+            &::before {
+                background-color: #ffb700;
+                border-color: #ffb700;
+            }
+            &::after {
+                width: 16px;
+                height: 10px;
+                border: 3px solid;
+                border-color: transparent transparent #fff #fff;
+                top: 3px;
+                left: 2px;
+                rotate: -45deg;
+            }
+        }
+
         &-label {
+            margin-left: 30px;
             color: #9e9da8;
             font-size: 1.5rem;
             font-weight: 500;
