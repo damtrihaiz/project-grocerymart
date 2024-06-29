@@ -1,5 +1,5 @@
 @use '../abstracts';
-
+$error-color: #ed4337;
 .form {
     &:has(:invalid) &__submit-btn {
         opacity: 0.5;
@@ -7,7 +7,11 @@
     }
 
     &__group {
-        margin-top: 30px;
+        margin-bottom: 30px;
+
+        @include abstracts.screen(md) {
+            margin-bottom: 20px;
+        }
 
         &--inline {
             display: flex;
@@ -17,8 +21,8 @@
 
     &__group:has(:invalid):has(&__input:not(:placeholder-shown)) {
         .form__text-input {
-            border-color: red;
-            background-color: rgba($color: red, $alpha: 0.1);
+            border-color: $error-color;
+            background-color: rgba($color: $error-color, $alpha: 0.1);
         }
         .form__error,
         .form__input-icon--error {
@@ -33,7 +37,7 @@
         margin-top: 10px;
         font-weight: 500;
         font-size: 1.5rem;
-        color: red;
+        color: $error-color;
         text-align: left;
         display: none;
     }
@@ -51,6 +55,10 @@
         &:focus-within {
             border-color: #77dae6;
         }
+
+        @include abstracts.screen(md) {
+            height: 48px;
+        }
     }
 
     &__input {
@@ -60,13 +68,18 @@
         font-weight: 500;
         line-height: 144.444%;
 
+        @include abstracts.screen(md) {
+            font-size: 1.6rem;
+            line-height: 150%;
+        }
+
         &-icon {
             margin-left: 12px;
 
             &--error {
                 display: none;
                 margin-left: 12px;
-                animation: shake 0.6s;
+                animation: shake 0.5s;
             }
         }
 
@@ -77,6 +90,9 @@
 
     &__pull-right {
         margin-left: auto;
+        @include abstracts.screen(md) {
+            font-size: 1.4rem !important;
+        }
     }
 
     &__checkbox {
@@ -120,6 +136,9 @@
             font-size: 1.5rem;
             font-weight: 500;
             line-height: 146.667%;
+            @include abstracts.screen(md) {
+                font-size: 1.4rem;
+            }
         }
     }
 }

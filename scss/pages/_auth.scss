@@ -4,6 +4,10 @@
     display: flex;
     min-height: 100vh;
 
+    @supports (-webkit-touch-callout: none) {
+        min-height: -webkit-fill-available;
+    }
+
     &__intro,
     &__content {
         padding: 0 30px;
@@ -45,6 +49,10 @@
             font-size: 1.8rem;
             font-weight: 500;
             line-height: 144.444%;
+
+            @include abstracts.screen(md) {
+                font-size: 1.5rem;
+            }
         }
     }
 
@@ -70,8 +78,12 @@
 
             padding: 50px 0;
             height: 100%;
-            max-width: 460px;
+            width: min(460px, 100%);
             margin: 0 auto;
+
+            @include abstracts.screen(md) {
+                padding-top: 80px;
+            }
         }
     }
 
@@ -80,18 +92,30 @@
         font-size: 3rem;
         font-weight: 500;
         line-height: 146.667%;
+
+        @include abstracts.screen(md) {
+            font-size: 2.2rem;
+        }
     }
 
     &__desc {
         color: #9e9da8;
         margin-top: 10px;
+        padding: 0 30px;
         font-size: 1.5rem;
         font-weight: 500;
-        line-height: 146.667%;
+        line-height: 142.857%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+        }
     }
     &__form {
-        margin-top: 30px;
+        margin-top: 60px;
         width: 100%;
+        @include abstracts.screen(md) {
+            margin-top: 30px;
+        }
     }
 
     &__link {
@@ -99,9 +123,6 @@
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 146.667%;
-        &-bottom {
-            margin-left: 5px;
-        }
     }
 
     &__btn-group {
@@ -109,6 +130,9 @@
         flex-direction: column;
         gap: 30px;
         margin-top: 50px;
+        @include abstracts.screen(md) {
+            margin-bottom: 0;
+        }
     }
 
     &__btn {
@@ -122,5 +146,15 @@
         font-size: 1.8rem;
         font-weight: 400;
         line-height: 144.444%;
+
+        &-link {
+            margin-left: 5px;
+            font-size: inherit;
+        }
+
+        @include abstracts.screen(md) {
+            margin-top: 56px;
+            font-size: 1.6rem;
+        }
     }
 }
