@@ -61,4 +61,11 @@ html {
     --auth-intro-bg: #fafafd;
     --auth-content-bg: #fff;
     --auth-link-color: #0071dc;
+    @include abstracts.screen(md) {
+        --auth-intro-bg: #fff;
+    }
+
+    // Forms
+
+    --form-placeholder-color: #d2d1d6;
 }
