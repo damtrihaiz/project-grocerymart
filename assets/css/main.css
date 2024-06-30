@@ -2623,6 +2623,20 @@ input {
   }
 }
 
+.message {
+  padding: 14px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.message--success {
+  margin-top: 20px;
+  border: 1.5px solid #a8d9ba;
+  background-color: rgba(145, 235, 178, 0.8);
+}
+
 html {
   --body-bg: #f6f6f6;
   --text-color: #1a162e;
@@ -2792,6 +2806,7 @@ html.dark {
   bottom: 50px;
 }
 .auth__intro-img {
+  width: var(--width);
   max-width: 100%;
 }
 .auth__intro-text {
@@ -2866,6 +2881,9 @@ html.dark {
   margin-top: 60px;
   width: 100%;
 }
+.auth__form-forgotpswd {
+  margin-top: 30px;
+}
 @media (max-width: 767.98px) {
   .auth__form {
     margin-top: 30px;
@@ -2892,7 +2910,11 @@ html.dark {
   height: 50px;
   gap: 10px;
 }
+.auth__btn-resetpswd {
+  margin-top: 0;
+}
 .auth__text {
+  margin-top: var(--mt);
   margin-top: 108px;
   color: #9e9da8;
   font-size: 1.8rem;

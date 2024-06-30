@@ -40,6 +40,7 @@
         }
 
         &-img {
+            width: var(--width);
             max-width: 100%;
         }
 
@@ -115,6 +116,10 @@
     &__form {
         margin-top: 60px;
         width: 100%;
+
+        &-forgotpswd {
+            margin-top: 30px;
+        }
         @include abstracts.screen(md) {
             margin-top: 30px;
         }
@@ -140,9 +145,13 @@
     &__btn {
         height: 50px;
         gap: 10px;
+        &-resetpswd {
+            margin-top: 0;
+        }
     }
 
     &__text {
+        margin-top: var(--mt);
         margin-top: 108px;
         color: #9e9da8;
         font-size: 1.8rem;
