@@ -2806,8 +2806,7 @@ html.dark {
   bottom: 50px;
 }
 .auth__intro-img {
-  width: var(--width);
-  max-width: 100%;
+  width: min(424px, 100%);
 }
 .auth__intro-text {
   text-align: center;
@@ -2881,9 +2880,6 @@ html.dark {
   margin-top: 60px;
   width: 100%;
 }
-.auth__form-forgotpswd {
-  margin-top: 30px;
-}
 @media (max-width: 767.98px) {
   .auth__form {
     margin-top: 30px;
@@ -2909,9 +2905,6 @@ html.dark {
 .auth__btn {
   height: 50px;
   gap: 10px;
-}
-.auth__btn-resetpswd {
-  margin-top: 0;
 }
 .auth__text {
   margin-top: var(--mt);
