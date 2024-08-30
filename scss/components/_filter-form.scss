@@ -60,18 +60,6 @@
             margin-bottom: 0;
         }
 
-        &-label {
-            font-size: 2.2rem;
-            font-weight: 500;
-            line-height: 145.455%;
-            display: block;
-            &--small {
-                font-size: 1.4rem;
-                line-height: 142.875%;
-                margin-bottom: 10px;
-            }
-        }
-
         &-group {
             margin-top: 20px;
             &--inline {
@@ -111,8 +99,7 @@
             }
         }
 
-        &-text-input,
-        &-select-wrap {
+        &-text-input {
             border-radius: 6px;
             border: 1px solid #d2d1d6;
         }
@@ -160,57 +147,6 @@
 
         &-input-icon {
             margin-left: 12px;
-        }
-
-        &-select-wrap {
-            display: flex;
-            align-items: center;
-            padding: 5px 0;
-            height: 45px;
-        }
-        &-select {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex: 1;
-
-            padding: 0 14px;
-            min-width: var(--width, 109px);
-            height: calc(100% - 10px);
-
-            font-size: 1.4rem;
-            font-weight: 500;
-            line-height: 142.857%;
-
-            cursor: pointer;
-        }
-        &-select + &-select {
-            border-left: 1px solid #d2d1d6;
-        }
-
-        &-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px 20px;
-            @include abstracts.screen(sm) {
-                column-gap: 9px;
-            }
-        }
-
-        &-tag {
-            padding: 6px 12px;
-            border-radius: 6px;
-            background: var(--filter-form-tag-bg);
-            color: #9e9da8;
-            font-size: 1.4rem;
-            font-weight: 500;
-            line-height: 142.857%;
-
-            transition: color 0.2s;
-
-            &:hover {
-                color: var(--text-color);
-            }
         }
     }
     // End form
