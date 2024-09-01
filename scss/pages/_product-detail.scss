@@ -4,10 +4,14 @@
     min-height: 60vh;
     display: flex;
     flex-direction: column;
+    padding-bottom: 50px;
     background-color: var(--product-detail-bg);
 }
 .product-container {
     margin-top: 30px;
+    @include abstracts.screen(md) {
+        margin-top: 20px;
+    }
 }
 
 .prod-preview {
@@ -22,6 +26,10 @@
         flex-direction: row-reverse;
         margin-top: 0;
         padding-left: 0;
+    }
+
+    @include abstracts.screen(md) {
+        padding: 0;
     }
 
     &__list {
@@ -47,6 +55,10 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
+
+        @include abstracts.screen(md) {
+            top: 30px;
+        }
     }
 
     &__thumbs {
@@ -89,7 +101,16 @@
 
 .prod-info {
     padding: 60px;
-    background: #f6f6f6;
+    background: var(--product-detail-info-bg);
+
+    &-content {
+        @include abstracts.screen(md) {
+            padding: 16px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+        }
+    }
 
     @include abstracts.screen(xxl) {
         padding: 40px;
@@ -99,10 +120,21 @@
         margin-top: 30px;
     }
 
+    @include abstracts.screen(md) {
+        margin-top: 0;
+        padding: 16px 0 0;
+        border-radius: 20px;
+    }
+
     &__heading {
         font-size: 2.6rem;
         font-weight: 500;
         line-height: 138.462%;
+
+        @include abstracts.screen(md) {
+            font-weight: 700;
+            line-height: 144.444%;
+        }
     }
 
     &__label {
@@ -118,10 +150,6 @@
         padding: 20px;
         border-radius: 6px;
         border: 1px solid #b9babe;
-
-        @include abstracts.screen(lg) {
-            width: 450px;
-        }
     }
 
     &__row {
@@ -172,12 +200,20 @@
     @include abstracts.screen(xxl) {
         padding-left: 10px;
     }
+
+    @include abstracts.screen(lg) {
+        padding-left: 0;
+    }
 }
 
 .prod-prop {
     display: flex;
     gap: 16px;
     margin-top: 30px;
+
+    @include abstracts.screen(md) {
+        margin-top: 20px;
+    }
 
     &__icon {
         align-self: flex-start;
