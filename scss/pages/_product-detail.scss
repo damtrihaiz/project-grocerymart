@@ -83,13 +83,13 @@
         object-fit: contain;
         border: 1px solid rgba(158, 157, 168, 0.3);
         border-radius: 4px;
-        cursor: pointer;
         opacity: 0.8;
         transition: opacity 0.3s;
 
-        &:hover {
+        &:not(&--current):hover {
             border-color: #9e9da8;
             opacity: 1;
+            cursor: pointer;
         }
 
         &--current {
@@ -101,14 +101,14 @@
 
 .prod-info {
     padding: 60px;
+    border-radius: 10px;
     background: var(--product-detail-info-bg);
 
     &-content {
         @include abstracts.screen(md) {
             padding: 16px;
-            background-color: #fff;
+            background-color: var(--product-info-content-bg);
             border-radius: 20px;
-            box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
         }
     }
 
@@ -142,7 +142,7 @@
     }
 
     &__tag {
-        background: #ededf6;
+        background: var(--product-info-tag-bg);
     }
 
     &__card {
@@ -166,6 +166,7 @@
     &__tax {
         padding: 2px 8px;
         margin-left: 10px;
+        border-radius: 4px;
         background: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), #67b044;
         color: #67b044;
         font-size: 1.4rem;

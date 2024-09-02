@@ -2674,6 +2674,33 @@ input {
   color: inherit;
 }
 
+.search-bar {
+  height: 50px;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--search-bar-bg);
+}
+.search-bar__input {
+  flex: 1;
+  height: 100%;
+  padding-left: 15px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 142.857%;
+}
+.search-bar__input::placeholder {
+  color: #9e9da8;
+  font-weight: 400;
+}
+.search-bar__submit {
+  height: 100%;
+  padding: 0 15px;
+}
+.search-bar__submit:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
 html {
   --body-bg: #f6f6f6;
   --text-color: #1a162e;
@@ -2711,8 +2738,11 @@ html {
   --auth-content-bg: #fff;
   --auth-link-color: #0071dc;
   --form-placeholder-color: #d2d1d6;
+  --search-bar-bg: #fff;
   --product-detail-bg: #fff;
+  --product-info-content-bg: #fff;
   --product-detail-info-bg: #f6f6f6;
+  --product-info-tag-bg: #ededf6;
   --breadcrumbs-bg: #f6f6f6;
   --breadcrumbs-shadow: rgba(237, 237, 246, 0.2);
 }
@@ -2781,13 +2811,22 @@ html.dark {
   --auth-content-bg: #292e39;
   --auth-intro-text-color: #b9babe;
   --form-placeholder-color: #b9babe;
+  --search-bar-bg: #171c28;
   --product-detail-bg: #292e39;
+  --product-info-content-bg: #292e39;
+  --product-detail-info-bg: #171c28;
+  --product-info-tag-bg: #292e39;
   --breadcrumbs-bg: #171c28;
   --breadcrumbs-shadow: rgba(23, 28, 40, 0.2);
 }
 @media (max-width: 991.98px) {
   html.dark {
     --header-box-shadow-color: rgba(0, 0, 0, 0.2);
+  }
+}
+@media (max-width: 767.98px) {
+  html.dark {
+    --product-info-content-bg: #171c28;
   }
 }
 
@@ -3067,13 +3106,13 @@ html.dark {
   object-fit: contain;
   border: 1px solid rgba(158, 157, 168, 0.3);
   border-radius: 4px;
-  cursor: pointer;
   opacity: 0.8;
   transition: opacity 0.3s;
 }
-.prod-preview__thumb-img:hover {
+.prod-preview__thumb-img:not(.prod-preview__thumb-img--current):hover {
   border-color: #9e9da8;
   opacity: 1;
+  cursor: pointer;
 }
 .prod-preview__thumb-img--current {
   opacity: 1;
@@ -3082,14 +3121,14 @@ html.dark {
 
 .prod-info {
   padding: 60px;
+  border-radius: 10px;
   background: var(--product-detail-info-bg);
 }
 @media (max-width: 767.98px) {
   .prod-info-content {
     padding: 16px;
-    background-color: #fff;
+    background-color: var(--product-info-content-bg);
     border-radius: 20px;
-    box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
   }
 }
 @media (max-width: 1399.98px) {
@@ -3124,7 +3163,7 @@ html.dark {
   margin-top: 30px;
 }
 .prod-info__tag {
-  background: #ededf6;
+  background: var(--product-info-tag-bg);
 }
 .prod-info__card {
   margin-top: 30px;
@@ -3144,6 +3183,7 @@ html.dark {
 .prod-info__tax {
   padding: 2px 8px;
   margin-left: 10px;
+  border-radius: 4px;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), #67b044;
   color: #67b044;
   font-size: 1.4rem;
