@@ -236,6 +236,10 @@
         display: flex;
         align-items: center;
         margin-left: -30px;
+
+        @include abstracts.screen(md) {
+            margin-left: -20px;
+        }
     }
 
     &__item {
@@ -244,6 +248,8 @@
         font-size: 2.2rem;
         font-weight: 500;
         line-height: 145.455%;
+        white-space: nowrap;
+        user-select: none;
 
         &--current {
             color: var(--text-color);
@@ -252,6 +258,11 @@
         &:not(&--current):hover {
             cursor: pointer;
             opacity: 0.8;
+        }
+
+        @include abstracts.screen(md) {
+            padding: 8px 20px;
+            font-size: 1.8rem;
         }
     }
 
