@@ -270,7 +270,7 @@
     right: -80px;
     width: min(645px, 100vw);
     padding-top: 28px;
-    // display: none;
+    display: none;
 
     &__inner {
         position: relative;
@@ -314,6 +314,12 @@
         border-width: 1.5px 0;
         border-style: solid;
         border-color: var(--header-act-dropdown-border-color);
+    }
+
+    &__separate {
+        height: 1.5px;
+        margin: 30px 0;
+        background-color: var(--header-act-dropdown-border-color);
     }
 
     &__row {
