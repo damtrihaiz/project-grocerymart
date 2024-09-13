@@ -58,8 +58,11 @@
     white-space: nowrap;
     user-select: none;
 
+    &--small {
+        height: 40px;
+    }
+
     &--text {
-        color: #9e9da8;
         background-color: transparent;
         font-weight: 400;
     }

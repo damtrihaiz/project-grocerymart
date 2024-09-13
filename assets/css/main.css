@@ -2296,8 +2296,10 @@ input {
   white-space: nowrap;
   user-select: none;
 }
+.btn--small {
+  height: 40px;
+}
 .btn--text {
-  color: #9e9da8;
   background-color: transparent;
   font-weight: 400;
 }
@@ -2987,6 +2989,61 @@ input {
   margin: 40px 0;
 }
 
+.dialog__overlay, .dialog {
+  position: fixed;
+  inset: 0;
+}
+
+.dialog {
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+}
+.dialog.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity, visibility;
+  transition-duration: 0.3s;
+}
+.dialog__overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.dialog__content {
+  position: relative;
+  background-color: var(--dialog-bg);
+  z-index: 1;
+  max-width: min(450px, 100% - 40px);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0px 20px 60px 10px var(--dialog-shadow);
+}
+.dialog__text {
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+.dialog__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 20px;
+}
+@media (max-width: 767.98px) {
+  .dialog {
+    padding: 20px;
+  }
+  .dialog__btn {
+    flex: 1;
+  }
+  .dialog__bottom {
+    gap: 15px;
+  }
+}
+
 html {
   --body-bg: #f6f6f6;
   --text-color: #1a162e;
@@ -3042,6 +3099,8 @@ html {
   --card-item-border-color: #d2d1d6;
   --gift-card-bg: rgb(118, 68, 225, 0.1);
   --gift-card-shadow: rgba(237, 237, 246, 0.2);
+  --dialog-bg: #fff;
+  --dialog-shadow: rgba(237, 237, 246, 0.2);
 }
 @media (max-width: 991.98px) {
   html {
@@ -3131,6 +3190,8 @@ html.dark {
   --card-item-border-color: #292e39;
   --gift-card-bg: #292e39;
   --gift-card-shadow: rgba(23, 28, 40, 0.2);
+  --dialog-bg: #2f3540;
+  --dialog-shadow: rgba(23, 28, 40, 0.2);
 }
 @media (max-width: 991.98px) {
   html.dark {
