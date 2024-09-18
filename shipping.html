@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,14 +43,14 @@
                 <div class="checkout-container">
                     <ul class="breadcrumbs checkout-page__breadcrumbs">
                         <li>
-                            <a href="#!" class="breadcrumbs__link"
+                            <a href="index-logined.html" class="breadcrumbs__link"
                                 >Home
                                 <img src="./assets/icons/arrow-right.svg" alt="" />
                             </a>
                         </li>
 
                         <li>
-                            <a href="#!" class="breadcrumbs__link breadcrumbs__link--current"
+                            <a href="./checkout.html" class="breadcrumbs__link"
                                 >Checkout
                                 <img src="./assets/icons/arrow-right.svg" alt="" />
                             </a>
@@ -79,11 +79,24 @@
                                         </button>
                                     </div>
                                     <div class="user-address__list">
+                                        <!-- Empty message -->
+                                        <p class="user-address__message d-none">
+                                            Not address yet .
+                                            <a class="user-address__link" href="#!">Add a new address</a>
+                                        </p>
                                         <!-- Adress card 1 -->
                                         <article class="address-card">
                                             <div class="address-card__left">
                                                 <div class="address-card__choose">
                                                     <!-- Custom checkbox -->
+                                                    <label class="address-card__checkbok" for="">
+                                                        <input
+                                                            type="checkbox"
+                                                            name=""
+                                                            checked
+                                                            class="address-card__checkbok-input"
+                                                        />
+                                                    </label>
                                                 </div>
                                                 <div class="address-card__info">
                                                     <h3 class="address-card__title">Imran Khan</h3>
@@ -102,7 +115,7 @@
                                                         <img
                                                             src="./assets/icons/edit.svg"
                                                             alt=""
-                                                            class="address-card__edit-icon"
+                                                            class="address-card__edit-icon icon"
                                                         />
                                                         Edit
                                                     </button>
@@ -115,6 +128,13 @@
                                             <div class="address-card__left">
                                                 <div class="address-card__choose">
                                                     <!-- Custom checkbox -->
+                                                    <label class="address-card__checkbok" for="">
+                                                        <input
+                                                            type="checkbox"
+                                                            name=""
+                                                            class="address-card__checkbok-input"
+                                                        />
+                                                    </label>
                                                 </div>
                                                 <div class="address-card__info">
                                                     <h3 class="address-card__title">Imran Khan</h3>
@@ -134,7 +154,7 @@
                                                         <img
                                                             src="./assets/icons/edit.svg"
                                                             alt=""
-                                                            class="address-card__edit-icon"
+                                                            class="address-card__edit-icon icon"
                                                         />
                                                         Edit
                                                     </button>
@@ -143,6 +163,7 @@
                                         </article>
                                     </div>
                                 </div>
+                                <div class="card-info__separate"></div>
                                 <h2 class="card-info__sub-heading">Items details</h2>
                                 <div class="card-info__list">
                                     <!-- Card item 1 -->
@@ -190,7 +211,11 @@
                                                 <p class="card-item__total-price">$47.00</p>
                                                 <div class="card-item__ctrl">
                                                     <button class="card-item__ctrl-btn">
-                                                        <img src="./assets/icons/heart-2.svg" alt="" />
+                                                        <img
+                                                            src="./assets/icons/heart-red.svg"
+                                                            alt=""
+                                                            class="card-item__ctrl-icon"
+                                                        />
                                                         Save
                                                     </button>
                                                     <button

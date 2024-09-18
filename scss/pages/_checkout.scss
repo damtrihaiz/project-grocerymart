@@ -34,6 +34,12 @@
         font-size: 2.4rem;
         font-weight: 700;
         line-height: 141.667%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 150%;
+        }
     }
 
     &__continue {
@@ -91,6 +97,10 @@
         height: 1px;
         background-color: var(--card-item-border-color);
         margin: 30px 0;
+
+        @include abstracts.screen(md) {
+            margin: 16px 0;
+        }
     }
 
     &__next-btn {
@@ -195,6 +205,10 @@
                 gap: 10px;
             }
         }
+        &-icon {
+            margin-top: 8px;
+            margin-right: -10px;
+        }
     }
 
     &__input {
@@ -209,6 +223,11 @@
         font-size: 15px;
         font-weight: 500;
         line-height: 146.667%;
+
+        &-btn {
+            display: flex;
+            align-items: center;
+        }
     }
 
     &__total-price {
@@ -280,9 +299,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
+        gap: 16px;
 
-    &__list {
+        @include abstracts.screen(md) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     &__title {
@@ -304,13 +326,24 @@
         gap: 10px;
     }
 
-    &__list {
+    &__message {
+        margin-top: 30px;
+        font-weight: 500;
+    }
+
+    &__link {
+        color: #0071dc;
     }
 }
 
 .address-card {
     margin-top: 30px;
     display: flex;
+    gap: 16px;
+
+    @include abstracts.screen(md) {
+        flex-direction: column;
+    }
 
     &__left {
         display: flex;
@@ -328,8 +361,10 @@
 
     &__desc {
         font-size: 1.5rem;
+        font-weight: 400;
         line-height: 146.667%;
         margin-top: 4px;
+        width: min(520px, 90%);
     }
     &__list {
         display: flex;
@@ -338,10 +373,17 @@
         margin-top: 20px;
         list-style: disc inside;
         font-size: 1.4rem;
+        font-weight: 400;
         line-height: 142.857%;
 
         &-item {
             margin-left: 8px;
+        }
+
+        @include abstracts.screen(sm) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
         }
     }
 
@@ -356,6 +398,23 @@
             gap: 10px;
             font-size: 1.8rem;
             line-height: 144.444%;
+        }
+    }
+
+    &__checkbok {
+        &-input {
+            appearance: none;
+            &::before {
+                content: url(../icons/checkbok-uncheck.svg);
+            }
+
+            &:not(:checked)::before {
+                filter: var(--icon-color);
+            }
+
+            &:checked::before {
+                content: url(../icons/checkbok-checked.svg);
+            }
         }
     }
 }
