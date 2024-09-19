@@ -6,6 +6,15 @@ $error-color: #ed4337;
         pointer-events: none;
     }
 
+    &__row {
+        display: flex;
+        gap: 30px;
+
+        > * {
+            flex: 1;
+        }
+    }
+
     &__group {
         margin-bottom: 30px;
 
@@ -42,37 +51,59 @@ $error-color: #ed4337;
         display: none;
     }
 
+    &__text-area,
     &__text-input {
         display: flex;
         align-items: center;
-
-        height: 50px;
-        padding: 0 12px;
-
         border-radius: 10px;
         border: 1.5px solid var(--Secondary-Color-Secondary-3, #d2d1d6);
+        padding: 0 12px;
 
         &:focus-within {
             border-color: #77dae6;
         }
+    }
+
+    &__text-area {
+        padding: 12px;
+        height: 100px;
+
+        &-input {
+            width: 100%;
+            resize: none;
+        }
+    }
+
+    &__text-input {
+        height: 50px;
 
         @include abstracts.screen(md) {
             height: 48px;
         }
+
+        &--small {
+            height: 42px;
+        }
     }
 
+    &__text-area-input,
     &__input {
         flex: 1;
         height: 100%;
-        font-size: 1.8rem;
-        font-weight: 500;
+        font-size: 1.6rem;
         line-height: 144.444%;
+
+        &::placeholder {
+            color: var(--form-placeholder-color);
+        }
 
         @include abstracts.screen(md) {
             font-size: 1.6rem;
             line-height: 150%;
         }
+    }
 
+    &__input {
         &-icon {
             margin-left: 12px;
 
@@ -81,10 +112,6 @@ $error-color: #ed4337;
                 margin-left: 12px;
                 animation: shake 0.5s;
             }
-        }
-
-        &::placeholder {
-            color: var(--form-placeholder-color);
         }
     }
 

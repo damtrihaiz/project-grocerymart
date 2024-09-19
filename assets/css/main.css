@@ -2572,6 +2572,13 @@ input {
   opacity: 0.5;
   pointer-events: none;
 }
+.form__row {
+  display: flex;
+  gap: 30px;
+}
+.form__row > * {
+  flex: 1;
+}
 .form__group {
   margin-bottom: 30px;
 }
@@ -2603,31 +2610,46 @@ input {
   text-align: left;
   display: none;
 }
-.form__text-input {
+.form__text-area, .form__text-input {
   display: flex;
   align-items: center;
-  height: 50px;
-  padding: 0 12px;
   border-radius: 10px;
   border: 1.5px solid var(--Secondary-Color-Secondary-3, #d2d1d6);
+  padding: 0 12px;
 }
-.form__text-input:focus-within {
+.form__text-area:focus-within, .form__text-input:focus-within {
   border-color: #77dae6;
+}
+.form__text-area {
+  padding: 12px;
+  height: 100px;
+}
+.form__text-area-input {
+  width: 100%;
+  resize: none;
+}
+.form__text-input {
+  height: 50px;
 }
 @media (max-width: 767.98px) {
   .form__text-input {
     height: 48px;
   }
 }
-.form__input {
+.form__text-input--small {
+  height: 42px;
+}
+.form__text-area-input, .form__input {
   flex: 1;
   height: 100%;
-  font-size: 1.8rem;
-  font-weight: 500;
+  font-size: 1.6rem;
   line-height: 144.444%;
 }
+.form__text-area-input::placeholder, .form__input::placeholder {
+  color: var(--form-placeholder-color);
+}
 @media (max-width: 767.98px) {
-  .form__input {
+  .form__text-area-input, .form__input {
     font-size: 1.6rem;
     line-height: 150%;
   }
@@ -2639,9 +2661,6 @@ input {
   display: none;
   margin-left: 12px;
   animation: shake 0.5s;
-}
-.form__input::placeholder {
-  color: var(--form-placeholder-color);
 }
 .form__pull-right {
   margin-left: auto;
@@ -2989,12 +3008,12 @@ input {
   margin: 40px 0;
 }
 
-.dialog__overlay, .dialog {
+.modal__overlay, .modal {
   position: fixed;
   inset: 0;
 }
 
-.dialog {
+.modal {
   z-index: 99;
   display: flex;
   align-items: center;
@@ -3002,29 +3021,62 @@ input {
   opacity: 0;
   visibility: hidden;
 }
-.dialog.show {
+.modal.show {
   opacity: 1;
   visibility: visible;
   transition: opacity, visibility;
   transition-duration: 0.3s;
 }
-.dialog__overlay {
+.modal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  font-size: 3rem;
+  padding: 10px 15px;
+  opacity: 0.6;
+}
+.modal__close:hover {
+  opacity: 1;
+}
+.modal__overlay {
   background-color: rgba(0, 0, 0, 0.4);
 }
-.dialog__content {
+.modal__heading {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.modal__body {
+  padding-right: 20px;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+.modal__content {
   position: relative;
-  background-color: var(--dialog-bg);
+  background-color: var(--modal-bg);
   z-index: 1;
-  max-width: min(450px, 100% - 40px);
+  width: min(var(--content-width, 800px), 100% - 40px);
   padding: 20px;
   border-radius: 16px;
-  box-shadow: 0px 20px 60px 10px var(--dialog-shadow);
+  box-shadow: 0px 20px 60px 10px var(--modal-shadow);
 }
-.dialog__text {
+.modal--small .modal__content {
+  --content-width: 400px;
+}
+.modal--large .modal__content {
+  --content-width: 1100px;
+}
+.modal--fill .modal__content {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+.modal__text {
   font-size: 1.8rem;
   line-height: 1.5;
 }
-.dialog__bottom {
+.modal__bottom {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -3033,13 +3085,13 @@ input {
   gap: 20px;
 }
 @media (max-width: 767.98px) {
-  .dialog {
+  .modal {
     padding: 20px;
   }
-  .dialog__btn {
+  .modal__btn {
     flex: 1;
   }
-  .dialog__bottom {
+  .modal__bottom {
     gap: 15px;
   }
 }
@@ -3099,8 +3151,8 @@ html {
   --card-item-border-color: #d2d1d6;
   --gift-card-bg: rgb(118, 68, 225, 0.1);
   --gift-card-shadow: rgba(237, 237, 246, 0.2);
-  --dialog-bg: #fff;
-  --dialog-shadow: rgba(237, 237, 246, 0.2);
+  --modal-bg: #fff;
+  --modal-shadow: rgba(237, 237, 246, 0.2);
 }
 @media (max-width: 991.98px) {
   html {
@@ -3190,8 +3242,8 @@ html.dark {
   --card-item-border-color: #292e39;
   --gift-card-bg: #292e39;
   --gift-card-shadow: rgba(23, 28, 40, 0.2);
-  --dialog-bg: #2f3540;
-  --dialog-shadow: rgba(23, 28, 40, 0.2);
+  --modal-bg: #2f3540;
+  --modal-shadow: rgba(23, 28, 40, 0.2);
 }
 @media (max-width: 991.98px) {
   html.dark {
