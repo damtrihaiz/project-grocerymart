@@ -531,10 +531,81 @@
                                     name=""
                                     placeholder="City/District/Town"
                                     id="city"
-                                    class="form__input"
+                                    class="form__input js-toggle"
+                                    toggle-target="#city-dialog"
                                 />
-
                                 <img src="./assets/icons/warning.svg" alt="" class="form__input-icon--error" />
+                                <div id="city-dialog" class="form__select-dialog hide">
+                                    <div class="form__search">
+                                        <input type="text" placeholder="Search" class="form__search-input" />
+                                        <img src="./assets/icons/search.svg" alt="" class="form__search-icon icon" />
+                                    </div>
+                                    <ul class="form__options-list">
+                                        <li class="form__option">An Giang</li>
+                                        <li class="form__option form__option--current">Ba Ria - Vung Tau</li>
+                                        <li class="form__option">Bac Giang</li>
+                                        <li class="form__option">Bac Kan</li>
+                                        <li class="form__option">Bac Lieu</li>
+                                        <li class="form__option">Bac Ninh</li>
+                                        <li class="form__option">Ben Tre</li>
+                                        <li class="form__option">Binh Dinh</li>
+                                        <li class="form__option">Binh Duong</li>
+                                        <li class="form__option">Binh Phuoc</li>
+                                        <li class="form__option">Binh Thuan</li>
+                                        <li class="form__option">Ca Mau</li>
+                                        <li class="form__option">Can Tho</li>
+                                        <li class="form__option">Cao Bang</li>
+                                        <li class="form__option">Da Nang</li>
+                                        <li class="form__option">Dak Lak</li>
+                                        <li class="form__option">Dak Nong</li>
+                                        <li class="form__option">Dien Bien</li>
+                                        <li class="form__option">Dong Nai</li>
+                                        <li class="form__option">Dong Thap</li>
+                                        <li class="form__option">Gia Lai</li>
+                                        <li class="form__option">Ha Giang</li>
+                                        <li class="form__option">Ha Nam</li>
+                                        <li class="form__option">Ha Noi</li>
+                                        <li class="form__option">Ha Tinh</li>
+                                        <li class="form__option">Hai Duong</li>
+                                        <li class="form__option">Hai Phong</li>
+                                        <li class="form__option">Hau Giang</li>
+                                        <li class="form__option">Hoa Binh</li>
+                                        <li class="form__option">Hung Yen</li>
+                                        <li class="form__option">Khanh Hoa</li>
+                                        <li class="form__option">Kien Giang</li>
+                                        <li class="form__option">Kon Tum</li>
+                                        <li class="form__option">Lai Chau</li>
+                                        <li class="form__option">Lam Dong</li>
+                                        <li class="form__option">Lang Son</li>
+                                        <li class="form__option">Lao Cai</li>
+                                        <li class="form__option">Long An</li>
+                                        <li class="form__option">Nam Dinh</li>
+                                        <li class="form__option">Nghe An</li>
+                                        <li class="form__option">Ninh Binh</li>
+                                        <li class="form__option">Ninh Thuan</li>
+                                        <li class="form__option">Phu Tho</li>
+                                        <li class="form__option">Phu Yen</li>
+                                        <li class="form__option">Quang Binh</li>
+                                        <li class="form__option">Quang Nam</li>
+                                        <li class="form__option">Quang Ngai</li>
+                                        <li class="form__option">Quang Ninh</li>
+                                        <li class="form__option">Quang Tri</li>
+                                        <li class="form__option">Soc Trang</li>
+                                        <li class="form__option">Son La</li>
+                                        <li class="form__option">Tay Ninh</li>
+                                        <li class="form__option">Thai Binh</li>
+                                        <li class="form__option">Thai Nguyen</li>
+                                        <li class="form__option">Thanh Hoa</li>
+                                        <li class="form__option">Thua Thien - Hue</li>
+                                        <li class="form__option">Tien Giang</li>
+                                        <li class="form__option">TP Ho Chi Minh</li>
+                                        <li class="form__option">Tra Vinh</li>
+                                        <li class="form__option">Tuyen Quang</li>
+                                        <li class="form__option">Vinh Long</li>
+                                        <li class="form__option">Vinh Phuc</li>
+                                        <li class="form__option">Yen Bai</li>
+                                    </ul>
+                                </div>
                             </div>
                             <p class="form__error">City in address of Account, Ship-To, and Bill-To party missing</p>
                         </div>

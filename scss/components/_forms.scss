@@ -82,6 +82,7 @@ $error-color: #ed4337;
     }
 
     &__text-input {
+        position: relative;
         height: 50px;
 
         @include abstracts.screen(md) {
@@ -108,6 +109,73 @@ $error-color: #ed4337;
         @include abstracts.screen(md) {
             font-size: 1.6rem;
             line-height: 150%;
+        }
+    }
+
+    &__search {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #d2d1d6;
+        padding: 0 20px 10px;
+
+        &_input {
+            flex: 1;
+        }
+
+        &_icon {
+            width: 16px;
+            &:hover {
+                opacity: 0.8;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__select-dialog {
+        position: absolute;
+        bottom: 48px;
+        left: 20px;
+
+        display: flex;
+        flex-direction: column;
+
+        opacity: 0;
+        visibility: hidden;
+        translate: 0 20px;
+        transition: opacity, visibility, translate;
+        transition-duration: 0.2s;
+
+        background-color: #fff;
+        padding: 10px 0;
+        border-radius: 10px;
+        border: 1px solid #d2d1d6;
+        max-height: 262px;
+        min-width: 230px;
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            translate: 0;
+        }
+    }
+    &__options-list {
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    &__option {
+        font-size: 1.4rem;
+        padding: 8px 20px;
+
+        &--current {
+            background: rgba($color: #ffb700, $alpha: 0.5);
+            font-weight: 500;
+        }
+
+        &:not(&--current):hover {
+            cursor: pointer;
+            background-color: #d2d1d6;
         }
     }
 

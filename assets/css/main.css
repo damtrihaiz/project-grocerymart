@@ -199,6 +199,7 @@ input:-webkit-autofill:active,
 input:-webkit-autofill:hover {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: var(--text-color);
+  caret-color: var(--text-color);
 }
 
 .icon {
@@ -2648,6 +2649,7 @@ input:-webkit-autofill:hover {
   resize: none;
 }
 .form__text-input {
+  position: relative;
   height: 50px;
 }
 @media (max-width: 767.98px) {
@@ -2673,6 +2675,62 @@ input:-webkit-autofill:hover {
     font-size: 1.6rem;
     line-height: 150%;
   }
+}
+.form__search {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #d2d1d6;
+  padding: 0 20px 10px;
+}
+.form__search_input {
+  flex: 1;
+}
+.form__search_icon {
+  width: 16px;
+}
+.form__search_icon:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.form__select-dialog {
+  position: absolute;
+  bottom: 48px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 20px;
+  transition: opacity, visibility, translate;
+  transition-duration: 0.2s;
+  background-color: #fff;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #d2d1d6;
+  max-height: 262px;
+  min-width: 230px;
+}
+.form__select-dialog.show {
+  opacity: 1;
+  visibility: visible;
+  translate: 0;
+}
+.form__options-list {
+  flex: 1;
+  overflow-y: auto;
+}
+.form__option {
+  font-size: 1.4rem;
+  padding: 8px 20px;
+}
+.form__option--current {
+  background: rgba(255, 183, 0, 0.5);
+  font-weight: 500;
+}
+.form__option:not(.form__option--current):hover {
+  cursor: pointer;
+  background-color: #d2d1d6;
 }
 .form__input-icon {
   margin-left: 12px;
