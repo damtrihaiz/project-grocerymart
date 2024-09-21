@@ -2676,27 +2676,60 @@ input:-webkit-autofill:hover {
     line-height: 150%;
   }
 }
+.form__close-dialog {
+  font-size: 3rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 4px 16px;
+  opacity: 0.7;
+  cursor: pointer;
+}
 .form__search {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  height: 38px;
   margin-bottom: 10px;
   border-bottom: 1px solid #d2d1d6;
-  padding: 0 20px 10px;
+  padding: 0 20px;
 }
-.form__search_input {
+.form__search-input {
   flex: 1;
+  font-size: 1.6rem;
+  height: 100%;
+  padding: 10px 0;
 }
-.form__search_icon {
+.form__search-icon {
   width: 16px;
+  margin-left: 10px;
 }
-.form__search_icon:hover {
+.form__search-icon:hover {
   opacity: 0.8;
   cursor: pointer;
+}
+@media (max-width: 991.98px) {
+  .form__search {
+    height: 42px;
+  }
+}
+@media (max-width: 575.98px) {
+  .form__search {
+    margin-top: 30px;
+    flex-direction: row-reverse;
+  }
+  .form__search-icon {
+    margin-left: 0;
+  }
+  .form__search-input {
+    padding-left: 20px;
+  }
 }
 .form__select-dialog {
   position: absolute;
   bottom: 48px;
   left: 20px;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -2704,12 +2737,28 @@ input:-webkit-autofill:hover {
   translate: 0 20px;
   transition: opacity, visibility, translate;
   transition-duration: 0.2s;
-  background-color: #fff;
-  padding: 10px 0;
+  max-height: 300px;
+  min-width: 230px;
+  padding-bottom: 10px;
+  background-color: var(--form-select-dialog-bg);
   border-radius: 10px;
   border: 1px solid #d2d1d6;
-  max-height: 262px;
-  min-width: 230px;
+  box-shadow: 0 0 5px var(--form-select-dialog-shadow);
+  overflow: hidden;
+}
+@media (max-width: 767.98px) {
+  .form__select-dialog {
+    max-height: 280px;
+  }
+}
+@media (max-width: 575.98px) {
+  .form__select-dialog {
+    position: fixed;
+    max-width: initial;
+    max-height: initial;
+    inset: 0;
+    border-radius: 0;
+  }
 }
 .form__select-dialog.show {
   opacity: 1;
@@ -2719,18 +2768,24 @@ input:-webkit-autofill:hover {
 .form__options-list {
   flex: 1;
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 .form__option {
   font-size: 1.4rem;
   padding: 8px 20px;
 }
 .form__option--current {
-  background: rgba(255, 183, 0, 0.5);
+  background: rgba(255, 183, 0, 0.6);
   font-weight: 500;
 }
 .form__option:not(.form__option--current):hover {
   cursor: pointer;
-  background-color: #d2d1d6;
+  background-color: var(--form-option-hover-bg);
+}
+@media (max-width: 991.98px) {
+  .form__option {
+    padding: 14px 20px;
+  }
 }
 .form__input-icon {
   margin-left: 12px;
@@ -3121,12 +3176,11 @@ input:-webkit-autofill:hover {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .modal__heading {
-  margin-bottom: 30px;
   font-size: 2rem;
   font-weight: 700;
 }
 .modal__body {
-  padding-right: 20px;
+  padding: 30px 20px 0 0;
   max-height: calc(100vh - 180px);
   overflow-y: auto;
 }
@@ -3224,6 +3278,9 @@ html {
   --auth-content-bg: #fff;
   --auth-link-color: #0071dc;
   --form-placeholder-color: #d2d1d6;
+  --form-select-dialog-shadow: rgba($color: #000000, $alpha: 0.15);
+  --form-select-dialog-bg: #fff;
+  --form-option-hover-bg: #d2d1d6;
   --search-bar-bg: #fff;
   --product-detail-bg: #fff;
   --product-info-content-bg: #fff;
@@ -3315,6 +3372,9 @@ html.dark {
   --auth-content-bg: #292e39;
   --auth-intro-text-color: #b9babe;
   --form-placeholder-color: #b9babe;
+  --form-select-dialog-shadow: rgba($color: #fff, $alpha: 0.15);
+  --form-select-dialog-bg: #2f3540;
+  --form-option-hover-bg: #292e39;
   --search-bar-bg: #171c28;
   --product-detail-bg: #292e39;
   --product-info-content-bg: #292e39;

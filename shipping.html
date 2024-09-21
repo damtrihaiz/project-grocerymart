@@ -464,7 +464,7 @@
         </div>
 
         <!--Modal : add new shipping address -->
-        <div id="add-new-address" class="modal show">
+        <div id="add-new-address" class="modal hide">
             <!-- <button class="modal__close">&times;</button> -->
             <div class="modal__content">
                 <h2 class="modal__heading">Add new shipping address</h2>
@@ -536,6 +536,12 @@
                                 />
                                 <img src="./assets/icons/warning.svg" alt="" class="form__input-icon--error" />
                                 <div id="city-dialog" class="form__select-dialog hide">
+                                    <button
+                                        class="form__close-dialog d-none d-sm-block js-toggle"
+                                        toggle-target="#city-dialog"
+                                    >
+                                        &times
+                                    </button>
                                     <div class="form__search">
                                         <input type="text" placeholder="Search" class="form__search-input" />
                                         <img src="./assets/icons/search.svg" alt="" class="form__search-icon icon" />

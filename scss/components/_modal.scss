@@ -42,13 +42,12 @@
     }
 
     &__heading {
-        margin-bottom: 30px;
         font-size: 2rem;
         font-weight: 700;
     }
 
     &__body {
-        padding-right: 20px;
+        padding: 30px 20px 0 0;
         max-height: calc(100vh - 180px);
         overflow-y: auto;
     }

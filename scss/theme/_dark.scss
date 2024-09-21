@@ -66,6 +66,9 @@ html.dark {
 
     // Forms
     --form-placeholder-color: #b9babe;
+    --form-select-dialog-shadow: rgba($color: #fff, $alpha: 0.15);
+    --form-select-dialog-bg: #2f3540;
+    --form-option-hover-bg: #292e39;
 
     // Search bar
     --search-bar-bg: #171c28;
