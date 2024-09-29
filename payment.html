@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Payment | Grocery Mart</title>
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+        <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+        <!-- Styles -->
+        <link rel="stylesheet" href="./assets/css/main.css" />
+        <!-- Scripts -->
+        <script src="./assets/js/scripts.js"></script>
+    </head>
+    <body>
+        <!-- Header -->
+        <header id="header" class="header">Header</header>
+        <script>
+            load('#header', './templates/header-logined.html');
+        </script>
+        <!-- Main -->
+        <main class="checkout-page">
+            <div class="container">
+                <!-- Search bar -->
+                <div class="checkout-container">
+                    <div class="search-bar d-none d-md-flex">
+                        <input type="text" class="search-bar__input" placeholder="Search for item" name="" id="" />
+                        <button class="search-bar__submit">
+                            <img src="./assets/icons/search.svg" alt="" class="search-bar__icon icon" />
+                        </button>
+                    </div>
+                </div>
+                <!-- Breadcrumbs -->
+                <div class="checkout-container">
+                    <ul class="breadcrumbs checkout-page__breadcrumbs">
+                        <li>
+                            <a href="index-logined.html" class="breadcrumbs__link"
+                                >Home
+                                <img src="./assets/icons/arrow-right.svg" alt="" />
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./checkout.html" class="breadcrumbs__link"
+                                >Checkout
+                                <img src="./assets/icons/arrow-right.svg" alt="" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" class="breadcrumbs__link breadcrumbs__link--current">Shipping</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Checkout content -->
+                <div class="checkout-container">
+                    <div class="row gy-xl-3 gy-md-2">
+                        <div class="col-8 col-xl-12">
+                            <div class="card-info">
+                                <h2 class="card-info__sub-heading">
+                                    1. Shipping, arrives between Mon, May 16—Tue, May 24
+                                </h2>
+                            </div>
+                            <div class="card-info">
+                                <h2 class="card-info__sub-heading">2. Shipping method</h2>
+                                <div class="card-info__separate"></div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-12">
+                            <div class="card-info">
+                                <h2 class="card-info__sub-heading">Payment Details</h2>
+
+                                <div class="card-info__row">
+                                    <span>Subtotal <span class="card-info__row--normal">(items)</span></span>
+                                    <span class="card-info__row--bold">3</span>
+                                </div>
+                                <div class="card-info__row">
+                                    <span>Price <span class="card-info__row--normal">(Total)</span></span>
+                                    <span class="card-info__row--bold">$191.65</span>
+                                </div>
+                                <div class="card-info__row">
+                                    <span>Shipping:</span>
+                                    <span class="card-info__row--bold">$10.00</span>
+                                </div>
+                                <div class="card-info__separete"></div>
+                                <div class="card-info__row">
+                                    <span>Estimated Total</span>
+                                    <span class="card-info__row--bold">$201.65</span>
+                                </div>
+                                <a href="./shipping.html" class="card-info__next-btn btn btn--primary btn--rounded"
+                                    >Continue to checkout</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" id="footer"></footer>
+        <script>
+            load('#footer', './templates/footer.html');
+        </script>
+        <!--Modal: confirm remove shopping cart item -->
+        <div id="delete-confirm" class="modal hide modal--small">
+            <!-- <button class="modal__close">&times;</button> -->
+            <div class="modal__content">
+                <div class="modal__text">Do you want remove this item from shopping cart ?</div>
+                <div class="modal__bottom">
+                    <button class="btn btn--small btn--text modal__btn js-toggle" toggle-target="#delete-confirm">
+                        Cancel
+                    </button>
+                    <button class="btn btn--small btn--primary modal__btn js-toggle" toggle-target="#delete-confirm">
+                        Delete
+                    </button>
+                </div>
+            </div>
+            <div class="modal__overlay js-toggle" toggle-target="#delete-confirm"></div>
+        </div>
+
+        <!--Modal : add new shipping address -->
+        <div id="add-new-address" class="modal hide">
+            <!-- <button class="modal__close">&times;</button> -->
+            <div class="modal__content">
+                <h2 class="modal__heading">Add new shipping address</h2>
+                <div class="modal__body">
+                    <form action="" class="form">
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label for="name" class="form__label form__label--small">Name</label>
+                                <div class="form__text-input form__text-input--small">
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        id="name"
+                                        placeholder="Name"
+                                        class="form__input"
+                                        required
+                                        minlength="2"
+                                    />
+
+                                    <img src="./assets/icons/warning.svg" alt="" class="form__input-icon--error" />
+                                </div>
+                                <p class="form__error">Name must be at least 2 characters</p>
+                            </div>
+                            <div class="form__group">
+                                <label for="phone" class="form__label form__label--small">Phone</label>
+                                <div class="form__text-input form__text-input--small">
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        id="phone"
+                                        placeholder="Phone"
+                                        class="form__input"
+                                        required
+                                        minlength="10"
+                                    />
+
+                                    <img src="./assets/icons/warning.svg" alt="" class="form__input-icon--error" />
+                                </div>
+                                <p class="form__error">Phone must be at least 10 characters</p>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <label for="address" class="form__label form__label--small">Address</label>
+                            <div class="form__text-area">
+                                <textarea
+                                    type="address"
+                                    name="address"
+                                    id="address"
+                                    placeholder="Address (Area and street)"
+                                    class="form__text-area-input"
+                                    required
+                                ></textarea>
+
+                                <img src="./assets/icons/warning.svg" alt="" class="form__input-icon--error" />
+                            </div>
+                            <p class="form__error">Address not empty</p>
+                        </div>
+                        <div class="form__group">
+                            <label for="city" class="form__label form__label--small">City/District/Town</label>
+
+                            <div class="form__text-input form__text-input--small">
+                                <input
+                                    type="text"
+                                    name=""
+                                    placeholder="City/District/Town"
+                                    id="city"
+                                    class="form__input js-toggle"
+                                    toggle-target="#city-dialog"
+                                />
+                                <img src="./assets/icons/warning.svg" alt="" class="form__input-icon--error" />
+
+                                <!-- Select dialog -->
+                                <div id="city-dialog" class="form__select-dialog hide">
+                                    <h2 class="form__dialog-heading d-none d-sm-block">City/District/Town</h2>
+                                    <button
+                                        class="form__close-dialog d-none d-sm-block js-toggle"
+                                        toggle-target="#city-dialog"
+                                    >
+                                        &times
+                                    </button>
+                                    <div class="form__search">
+                                        <input type="text" placeholder="Search" class="form__search-input" />
+                                        <img src="./assets/icons/search.svg" alt="" class="form__search-icon icon" />
+                                    </div>
+                                    <ul class="form__options-list">
+                                        <li class="form__option">An Giang</li>
+                                        <li class="form__option form__option--current">Ba Ria - Vung Tau</li>
+                                        <li class="form__option">Bac Giang</li>
+                                        <li class="form__option">Bac Kan</li>
+                                        <li class="form__option">Bac Lieu</li>
+                                        <li class="form__option">Bac Ninh</li>
+                                        <li class="form__option">Ben Tre</li>
+                                        <li class="form__option">Binh Dinh</li>
+                                        <li class="form__option">Binh Duong</li>
+                                        <li class="form__option">Binh Phuoc</li>
+                                        <li class="form__option">Binh Thuan</li>
+                                        <li class="form__option">Ca Mau</li>
+                                        <li class="form__option">Can Tho</li>
+                                        <li class="form__option">Cao Bang</li>
+                                        <li class="form__option">Da Nang</li>
+                                        <li class="form__option">Dak Lak</li>
+                                        <li class="form__option">Dak Nong</li>
+                                        <li class="form__option">Dien Bien</li>
+                                        <li class="form__option">Dong Nai</li>
+                                        <li class="form__option">Dong Thap</li>
+                                        <li class="form__option">Gia Lai</li>
+                                        <li class="form__option">Ha Giang</li>
+                                        <li class="form__option">Ha Nam</li>
+                                        <li class="form__option">Ha Noi</li>
+                                        <li class="form__option">Ha Tinh</li>
+                                        <li class="form__option">Hai Duong</li>
+                                        <li class="form__option">Hai Phong</li>
+                                        <li class="form__option">Hau Giang</li>
+                                        <li class="form__option">Hoa Binh</li>
+                                        <li class="form__option">Hung Yen</li>
+                                        <li class="form__option">Khanh Hoa</li>
+                                        <li class="form__option">Kien Giang</li>
+                                        <li class="form__option">Kon Tum</li>
+                                        <li class="form__option">Lai Chau</li>
+                                        <li class="form__option">Lam Dong</li>
+                                        <li class="form__option">Lang Son</li>
+                                        <li class="form__option">Lao Cai</li>
+                                        <li class="form__option">Long An</li>
+                                        <li class="form__option">Nam Dinh</li>
+                                        <li class="form__option">Nghe An</li>
+                                        <li class="form__option">Ninh Binh</li>
+                                        <li class="form__option">Ninh Thuan</li>
+                                        <li class="form__option">Phu Tho</li>
+                                        <li class="form__option">Phu Yen</li>
+                                        <li class="form__option">Quang Binh</li>
+                                        <li class="form__option">Quang Nam</li>
+                                        <li class="form__option">Quang Ngai</li>
+                                        <li class="form__option">Quang Ninh</li>
+                                        <li class="form__option">Quang Tri</li>
+                                        <li class="form__option">Soc Trang</li>
+                                        <li class="form__option">Son La</li>
+                                        <li class="form__option">Tay Ninh</li>
+                                        <li class="form__option">Thai Binh</li>
+                                        <li class="form__option">Thai Nguyen</li>
+                                        <li class="form__option">Thanh Hoa</li>
+                                        <li class="form__option">Thua Thien - Hue</li>
+                                        <li class="form__option">Tien Giang</li>
+                                        <li class="form__option">TP Ho Chi Minh</li>
+                                        <li class="form__option">Tra Vinh</li>
+                                        <li class="form__option">Tuyen Quang</li>
+                                        <li class="form__option">Vinh Long</li>
+                                        <li class="form__option">Vinh Phuc</li>
+                                        <li class="form__option">Yen Bai</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="form__error">City in address of Account, Ship-To, and Bill-To party missing</p>
+                        </div>
+                        <div class="form__group form__group--inline">
+                            <label class="form__checkbox">
+                                <input type="checkbox" name="" id="" class="form__checkbox-input d-none" />
+                                <span class="form__checkbox-label">Set as default address</span>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal__bottom">
+                    <button class="btn btn--small btn--text modal__btn js-toggle" toggle-target="#add-new-address">
+                        Cancel
+                    </button>
+                    <button class="btn btn--small btn--primary modal__btn">Create</button>
+                </div>
+            </div>
+            <div class="modal__overlay"></div>
+        </div>
+    </body>
+</html>

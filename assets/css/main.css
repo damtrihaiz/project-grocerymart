@@ -2676,6 +2676,12 @@ input:-webkit-autofill:hover {
     line-height: 150%;
   }
 }
+.form__dialog-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 12px;
+  text-align: center;
+}
 .form__close-dialog {
   font-size: 3rem;
   position: absolute;
@@ -2715,14 +2721,10 @@ input:-webkit-autofill:hover {
 }
 @media (max-width: 575.98px) {
   .form__search {
-    margin-top: 30px;
-    flex-direction: row-reverse;
-  }
-  .form__search-icon {
-    margin-left: 0;
-  }
-  .form__search-input {
-    padding-left: 20px;
+    padding: 12px;
+    margin: 10px 20px 0;
+    border: 1px solid #d2d1d6;
+    border-radius: 10px;
   }
 }
 .form__select-dialog {

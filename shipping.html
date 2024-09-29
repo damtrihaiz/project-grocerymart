@@ -416,7 +416,7 @@
                                     <span>Estimated Total</span>
                                     <span class="card-info__row--bold">$201.65</span>
                                 </div>
-                                <a href="./shipping.html" class="card-info__next-btn btn btn--primary btn--rounded"
+                                <a href="./payment.html" class="card-info__next-btn btn btn--primary btn--rounded"
                                     >Continue to checkout</a
                                 >
                             </div>
@@ -450,13 +450,13 @@
         <div id="delete-confirm" class="modal hide modal--small">
             <!-- <button class="modal__close">&times;</button> -->
             <div class="modal__content">
-                <div class="modal__text">Lorem ipsum amet elit Lorem ipsum dolor sit ?</div>
+                <div class="modal__text">Do you want remove this item from shopping cart ?</div>
                 <div class="modal__bottom">
                     <button class="btn btn--small btn--text modal__btn js-toggle" toggle-target="#delete-confirm">
                         Cancel
                     </button>
                     <button class="btn btn--small btn--primary modal__btn js-toggle" toggle-target="#delete-confirm">
-                        Confirm
+                        Delete
                     </button>
                 </div>
             </div>
@@ -535,7 +535,10 @@
                                     toggle-target="#city-dialog"
                                 />
                                 <img src="./assets/icons/warning.svg" alt="" class="form__input-icon--error" />
+
+                                <!-- Select dialog -->
                                 <div id="city-dialog" class="form__select-dialog hide">
+                                    <h2 class="form__dialog-heading d-none d-sm-block">City/District/Town</h2>
                                     <button
                                         class="form__close-dialog d-none d-sm-block js-toggle"
                                         toggle-target="#city-dialog"
@@ -627,9 +630,7 @@
                     <button class="btn btn--small btn--text modal__btn js-toggle" toggle-target="#add-new-address">
                         Cancel
                     </button>
-                    <button class="btn btn--small btn--primary modal__btn js-toggle" toggle-target="#add-new-address">
-                        Create
-                    </button>
+                    <button class="btn btn--small btn--primary modal__btn">Create</button>
                 </div>
             </div>
             <div class="modal__overlay"></div>
