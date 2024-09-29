@@ -1351,6 +1351,8 @@ input:-webkit-autofill:hover {
 }
 
 .header {
+  position: relative;
+  z-index: 2;
   background: var(--header-bg-color);
 }
 @media (max-width: 991.98px) {
@@ -1390,6 +1392,11 @@ input:-webkit-autofill:hover {
     left: 50%;
     translate: -50% -50%;
     margin-left: 0;
+  }
+}
+@media (max-width: 575.98px) {
+  .top-bar__logo {
+    padding-right: 20px;
   }
 }
 
@@ -2679,7 +2686,7 @@ input:-webkit-autofill:hover {
 .form__dialog-heading {
   font-size: 1.8rem;
   font-weight: 500;
-  padding: 12px;
+  padding: 20px 0 12px;
   text-align: center;
 }
 .form__close-dialog {
@@ -2687,7 +2694,7 @@ input:-webkit-autofill:hover {
   position: absolute;
   right: 0;
   top: 0;
-  padding: 4px 16px;
+  padding: 8px 12px;
   opacity: 0.7;
   cursor: pointer;
 }
@@ -2716,13 +2723,16 @@ input:-webkit-autofill:hover {
 }
 @media (max-width: 991.98px) {
   .form__search {
-    height: 42px;
+    height: 48px;
+  }
+  .form__search-icon {
+    width: 20px;
   }
 }
 @media (max-width: 575.98px) {
   .form__search {
     padding: 12px;
-    margin: 10px 20px 0;
+    margin: 10px 30px 0;
     border: 1px solid #d2d1d6;
     border-radius: 10px;
   }
@@ -2772,6 +2782,16 @@ input:-webkit-autofill:hover {
   overflow-y: auto;
   overscroll-behavior: contain;
 }
+@supports (-webkit-touch-callout: none) {
+  .form__options-list {
+    padding-bottom: 300px;
+  }
+}
+@media (max-width: 575.98px) {
+  .form__options-list {
+    margin-top: 10px;
+  }
+}
 .form__option {
   font-size: 1.4rem;
   padding: 8px 20px;
@@ -2786,7 +2806,8 @@ input:-webkit-autofill:hover {
 }
 @media (max-width: 991.98px) {
   .form__option {
-    padding: 14px 20px;
+    padding: 16px 30px;
+    font-size: 1.6rem;
   }
 }
 .form__input-icon {
