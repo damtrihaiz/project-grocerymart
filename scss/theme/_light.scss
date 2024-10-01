@@ -52,9 +52,9 @@ html {
     --like-btn-bg: #fff;
     --like-btn-shadow: rgba(124, 124, 124, 0.2);
 
-    // Product card
-    --product-card-bg: #fff;
-    --product-card-shadow: rgba(237, 237, 246, 0.2);
+    // Product cart
+    --product-cart-bg: #fff;
+    --product-cart-shadow: rgba(237, 237, 246, 0.2);
 
     // Filter
     --filter-form-bg: #fff;
@@ -96,11 +96,11 @@ html {
         --breadcrumbs-shadow: rgba(237, 237, 246, 0.2);
     }
 
-    // Review card
-    --review-card-bg: #fafafd;
+    // Review cart
+    --review-cart-bg: #fafafd;
 
     @include abstracts.screen(md) {
-        --review-card-bg: #fff;
+        --review-cart-bg: #fff;
     }
 
     // Text content
@@ -110,11 +110,14 @@ html {
     --checkout-breadcrumb-bg: #fff;
     --checkout-info-bg: #fff;
     --checkout-info-shadow: rgba(237, 237, 246, 0.2);
-    --card-item-border-color: #d2d1d6;
-    --gift-card-bg: rgb(118, 68, 225, 0.1);
-    --gift-card-shadow: rgba(237, 237, 246, 0.2);
+    --cart-item-border-color: #d2d1d6;
+    --gift-cart-bg: rgb(118, 68, 225, 0.1);
+    --gift-cart-shadow: rgba(237, 237, 246, 0.2);
 
     // modal
     --modal-bg: #fff;
     --modal-shadow: rgba(237, 237, 246, 0.2);
+
+    // Payment
+    --payment-item-bg: #f6f6f6;
 }

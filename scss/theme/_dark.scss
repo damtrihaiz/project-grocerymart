@@ -48,9 +48,9 @@ html.dark {
     --like-btn-bg: #292e39;
     --like-btn-shadow: rgba(124, 124, 124, 0.2);
 
-    // Product card
-    --product-card-bg: #171c28;
-    --product-card-shadow: rgba(0, 0, 0, 0.2);
+    // Product cart
+    --product-cart-bg: #171c28;
+    --product-cart-shadow: rgba(0, 0, 0, 0.2);
 
     // Filter
     --filter-form-bg: #292e39;
@@ -87,8 +87,8 @@ html.dark {
         --product-info-content-bg: #171c28;
     }
 
-    // Review card
-    --review-card-bg: #171c28;
+    // Review cart
+    --review-cart-bg: #171c28;
 
     // Text content
     --text-content-hr-bg: #474a51;
@@ -97,11 +97,14 @@ html.dark {
     --checkout-breadcrumb-bg: #171c28;
     --checkout-info-bg: #171c28;
     --checkout-info-shadow: rgba(23, 28, 40, 0.2);
-    --card-item-border-color: #292e39;
-    --gift-card-bg: #292e39;
-    --gift-card-shadow: rgba(23, 28, 40, 0.2);
+    --cart-item-border-color: #292e39;
+    --gift-cart-bg: #292e39;
+    --gift-cart-shadow: rgba(23, 28, 40, 0.2);
 
     // Modal
     --modal-bg: #2f3540;
     --modal-shadow: rgba(23, 28, 40, 0.2);
+
+    // Payment
+    --payment-item-bg: #292e39;
 }
