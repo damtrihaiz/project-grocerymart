@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -69,7 +69,7 @@
                 <!-- Checkout content -->
                 <div class="checkout-container">
                     <div class="row gy-xl-3 gy-md-2">
-                        <div class="col-8 col-xl-12">
+                        <div class="col-8 col-xl-8 col-lg-12">
                             <div class="cart-info">
                                 <div class="cart-info__top">
                                     <h2 class="cart-info__heading cart-info__heading--lv2">
@@ -86,14 +86,14 @@
                                 </div>
                                 <!-- Payment item 1 -->
                                 <article class="payment-item">
-                                    <div class="payment-item__content">
+                                    <div class="payment-item__info">
                                         <h3 class="payment-item__title">Imran Khan</h3>
                                         <p class="payment-item__desc">Museum of Rajas, Sylhet Sadar, Sylhet 3100.</p>
                                     </div>
                                 </article>
                                 <!-- Payment item 2 -->
                                 <article class="payment-item">
-                                    <div class="payment-item__content">
+                                    <div class="payment-item__info">
                                         <h3 class="payment-item__title">Items details</h3>
                                         <p class="payment-item__desc">2 items</p>
                                     </div>
@@ -108,44 +108,46 @@
                                 <article class="payment-item">
                                     <img src="./assets/img/payment/delivery-1.png" alt="" class="payment-item__thumb" />
                                     <div class="payment-item__content">
-                                        <h3 class="payment-item__title">Fedex Delivery</h3>
-                                        <p class="payment-item__desc payment-item__desc--low">
-                                            Delivery: 2-3 days work
-                                        </p>
+                                        <div class="payment-item__info">
+                                            <h3 class="payment-item__title">Fedex Delivery</h3>
+                                            <p class="payment-item__desc payment-item__desc--low">
+                                                Delivery: 2-3 days work
+                                            </p>
+                                        </div>
+                                        <label class="cart-info__checkbok payment-item__checkbox" for="">
+                                            <input
+                                                type="radio"
+                                                name="delivery-method"
+                                                class="cart-info__checkbok-input payment-item__checkbox-input"
+                                                checked
+                                            />
+                                            <span class="payment-item__cost">Free</span>
+                                        </label>
                                     </div>
-
-                                    <label class="cart-info__checkbok payment-item__checkbox" for="">
-                                        <input
-                                            type="radio"
-                                            name="delivery-method"
-                                            class="cart-info__checkbok-input payment-item__checkbox-input"
-                                            checked
-                                        />
-                                        <span class="payment-item__cost">Free</span>
-                                    </label>
                                 </article>
                                 <!-- Payment item 4 -->
                                 <article class="payment-item">
                                     <img src="./assets/img/payment/delivery-2.png" alt="" class="payment-item__thumb" />
                                     <div class="payment-item__content">
-                                        <h3 class="payment-item__title">DHL Delivery</h3>
-                                        <p class="payment-item__desc payment-item__desc--low">
-                                            Delivery: 2-3 days work
-                                        </p>
+                                        <div class="payment-item__info">
+                                            <h3 class="payment-item__title">DHL Delivery</h3>
+                                            <p class="payment-item__desc payment-item__desc--low">
+                                                Delivery: 2-3 days work
+                                            </p>
+                                        </div>
+                                        <label class="cart-info__checkbok payment-item__checkbox" for="">
+                                            <input
+                                                type="radio"
+                                                name="delivery-method"
+                                                class="cart-info__checkbok-input payment-item__checkbox-input"
+                                            />
+                                            <span class="payment-item__cost payment-item__cost--low">$12.00</span>
+                                        </label>
                                     </div>
-
-                                    <label class="cart-info__checkbok payment-item__checkbox" for="">
-                                        <input
-                                            type="radio"
-                                            name="delivery-method"
-                                            class="cart-info__checkbok-input payment-item__checkbox-input"
-                                        />
-                                        <span class="payment-item__cost payment-item__cost--low">$12.00</span>
-                                    </label>
                                 </article>
                             </div>
                         </div>
-                        <div class="col-4 col-xl-12">
+                        <div class="col-4 col-xl-4 col-lg-12">
                             <div class="cart-info">
                                 <h2 class="cart-info__heading cart-info__heading--lv2">Payment Details</h2>
                                 <p class="cart-info__desc">
@@ -224,7 +226,7 @@
                                         </div>
                                         <p class="form__error">Email is not in correct format!</p>
                                     </div>
-                                    <div class="form__row">
+                                    <div class="form__row cart-info__form-row">
                                         <div class="form__group">
                                             <div class="form__text-input">
                                                 <input
