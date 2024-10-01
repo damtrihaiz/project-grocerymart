@@ -2873,6 +2873,12 @@ input:-webkit-autofill:hover {
   line-height: 145.455%;
   display: block;
 }
+.form__label--medium {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 144.444%;
+  margin-bottom: 20px;
+}
 .form__label--small {
   font-size: 1.4rem;
   line-height: 142.875%;
@@ -3950,6 +3956,13 @@ html.dark {
     line-height: 150%;
   }
 }
+.cart-info__desc {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 146.667%;
+  margin-top: 6px;
+  margin-bottom: 30px;
+}
 .cart-info__edit-btn {
   display: flex;
   align-items: center;
@@ -3994,7 +4007,7 @@ html.dark {
 .cart-info__row--normal {
   font-weight: 400;
 }
-.cart-info__row:first-child {
+.cart-info__row:first-of-type {
   margin-top: 0;
 }
 .cart-info__separate {
