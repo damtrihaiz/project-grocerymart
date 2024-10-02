@@ -1,0 +1,88 @@
+.profile {
+    &-container {
+        padding-top: 30px;
+    }
+    &__sidebar {
+        border-radius: 20px;
+        background: var(--profile-sidebar-bg);
+        box-shadow: 0px 20px 60px 10px var(--profile-sidebar-shadow);
+        padding-bottom: 30px;
+    }
+
+    // Profile-user
+
+    &-user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(180deg, rgba(26, 22, 46, 0) 0%, #1a162e 100%),
+            url('../img/profile/cover.png') no-repeat center / cover;
+        border-radius: 20px 20px 0 0;
+        padding: 35px 20px 20px;
+
+        &__avatar {
+            width: 121px;
+            height: 121px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #ccc content-box;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+        }
+
+        &__name {
+            margin-top: 15px;
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 144.444%;
+        }
+        &__desc {
+            color: #fff;
+            margin-top: 2px;
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 146.667%;
+        }
+    }
+    //Profile-menu
+    &-menu {
+        margin-top: 30px;
+        padding: 0 30px;
+
+        &__title {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 144.444%;
+        }
+
+        &__list {
+            margin-top: 11px;
+        }
+
+        &__link {
+            display: flex;
+            align-items: center;
+            height: 32px;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 146.667%;
+            padding: 0 6px;
+            transition: background-color 0.2s;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: #ebebeb;
+            }
+        }
+
+        &__icon {
+            height: 100%;
+            width: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
