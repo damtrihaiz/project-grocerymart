@@ -1,0 +1,90 @@
+@use '../abstracts';
+
+.payment-card {
+    position: relative;
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    height: 100%;
+    color: #fff;
+    padding: 20px;
+    overflow: hidden;
+    z-index: 0;
+
+    &__img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        pointer-events: none;
+    }
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    &__type {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 142.857%;
+    }
+
+    &__number {
+        // position: relative;
+        // z-index: 1;
+        margin-top: 37px;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 144.444%;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    &__expired {
+        display: flex;
+        flex: 1;
+        gap: 40px;
+    }
+
+    &__label {
+        font-size: 0.8rem;
+        font-weight: 500;
+        line-height: 175%;
+    }
+
+    &__value {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 140%;
+    }
+
+    // &__circle {
+    //     z-index: 1;
+    // }
+}
+
+.new-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    border-radius: 10px;
+    border: 1.5px dashed var(--new-card-border);
+
+    &__text {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 142.857%;
+        color: #d2d1d6;
+    }
+
+    &:hover &__text {
+        font-size: 1.5rem;
+    }
+}

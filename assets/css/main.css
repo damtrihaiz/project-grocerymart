@@ -3267,6 +3267,80 @@ input:-webkit-autofill:hover {
   }
 }
 
+.payment-card {
+  position: relative;
+  border-radius: 10px;
+  background-color: var(--bg-color);
+  height: 100%;
+  color: #fff;
+  padding: 20px;
+  overflow: hidden;
+  z-index: 0;
+}
+.payment-card__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.payment-card__top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.payment-card__type {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 142.857%;
+}
+.payment-card__number {
+  margin-top: 37px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 144.444%;
+}
+.payment-card__bottom {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.payment-card__expired {
+  display: flex;
+  flex: 1;
+  gap: 40px;
+}
+.payment-card__label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 175%;
+}
+.payment-card__value {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.new-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border-radius: 10px;
+  border: 1.5px dashed var(--new-card-border);
+}
+.new-card__text {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 142.857%;
+  color: #d2d1d6;
+}
+.new-card:hover .new-card__text {
+  font-size: 1.5rem;
+}
+
 html {
   --body-bg: #f6f6f6;
   --text-color: #1a162e;
@@ -3330,6 +3404,7 @@ html {
   --payment-item-bg: #f6f6f6;
   --profile-sidebar-bg: #fff;
   --profile-sidebar-shadow: rgba(237, 237, 246, 0.2);
+  --new-card-border: #d2d1d6;
 }
 @media (max-width: 991.98px) {
   html {
@@ -3427,6 +3502,7 @@ html.dark {
   --payment-item-bg: #292e39;
   --profile-sidebar-bg: #171c28;
   --profile-sidebar-shadow: rgba(23, 28, 40, 0.2);
+  --new-card-border: #b9babe;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -4447,6 +4523,10 @@ html.dark {
   background: var(--profile-sidebar-bg);
   box-shadow: 0px 20px 60px 10px var(--profile-sidebar-shadow);
   padding-bottom: 30px;
+}
+.profile__desc {
+  margin-top: 0;
+  margin-bottom: 16px;
 }
 .profile-user {
   display: flex;
