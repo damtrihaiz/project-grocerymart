@@ -2,18 +2,20 @@
 
 .favourite-item {
     display: flex;
+    align-items: center;
     gap: 20px;
 
     &__separate {
         margin: 20px 0;
         height: 1px;
-        background-color: #d2d1d6;
+        background-color: var(--favourite-item-border);
     }
 
     &__thumb {
-        width: 151px;
-        height: 108px;
-        object-fit: contain;
+        width: 110px;
+        @include abstracts.screen(lg) {
+            width: 80px;
+        }
     }
 
     &__title {
@@ -27,11 +29,25 @@
         display: flex;
         align-items: center;
         gap: 20px;
+        @include abstracts.screen(sm) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     &__price {
         font-size: 2.2rem;
         font-weight: 500;
         line-height: 145.455%;
+        @include abstracts.screen(md) {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__btn {
+        @include abstracts.screen(md) {
+            font-size: 1.5rem;
+            height: 40px;
+        }
     }
 }

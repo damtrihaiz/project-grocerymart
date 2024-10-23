@@ -13,10 +13,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-shrink: 0;
         border-radius: 8px;
         width: 54px;
         height: 54px;
-        background-color: #fff;
+        background-color: var(--account-info-icon-bg);
     }
 
     &__title {

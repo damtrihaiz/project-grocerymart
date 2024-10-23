@@ -3323,6 +3323,7 @@ input:-webkit-autofill:hover {
 
 .new-card {
   height: 100%;
+  min-height: 172px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3354,10 +3355,11 @@ input:-webkit-autofill:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   border-radius: 8px;
   width: 54px;
   height: 54px;
-  background-color: #fff;
+  background-color: var(--account-info-icon-bg);
 }
 .account-info__title {
   font-size: 1.5rem;
@@ -3373,17 +3375,21 @@ input:-webkit-autofill:hover {
 
 .favourite-item {
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 .favourite-item__separate {
   margin: 20px 0;
   height: 1px;
-  background-color: #d2d1d6;
+  background-color: var(--favourite-item-border);
 }
 .favourite-item__thumb {
-  width: 151px;
-  height: 108px;
-  object-fit: contain;
+  width: 110px;
+}
+@media (max-width: 991.98px) {
+  .favourite-item__thumb {
+    width: 80px;
+  }
 }
 .favourite-item__title {
   font-size: 1.5rem;
@@ -3396,10 +3402,27 @@ input:-webkit-autofill:hover {
   align-items: center;
   gap: 20px;
 }
+@media (max-width: 575.98px) {
+  .favourite-item__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 .favourite-item__price {
   font-size: 2.2rem;
   font-weight: 500;
   line-height: 145.455%;
+}
+@media (max-width: 767.98px) {
+  .favourite-item__price {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .favourite-item__btn {
+    font-size: 1.5rem;
+    height: 40px;
+  }
 }
 
 html {
@@ -3465,8 +3488,11 @@ html {
   --payment-item-bg: #f6f6f6;
   --profile-sidebar-bg: #fff;
   --profile-sidebar-shadow: rgba(237, 237, 246, 0.2);
+  --profile-sidebar-link-hover: #ebebeb;
   --new-card-border: #d2d1d6;
   --account-info-bg: #f6f6f6;
+  --account-info-icon-bg: #fff;
+  --favourite-item-border: #d2d1d6;
 }
 @media (max-width: 991.98px) {
   html {
@@ -3564,8 +3590,11 @@ html.dark {
   --payment-item-bg: #292e39;
   --profile-sidebar-bg: #171c28;
   --profile-sidebar-shadow: rgba(23, 28, 40, 0.2);
+  --profile-sidebar-link-hover: #2f3540;
   --new-card-border: #b9babe;
   --account-info-bg: #292e39;
+  --account-info-icon-bg: #171c28;
+  --favourite-item-border: #292e39;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -4647,7 +4676,7 @@ html.dark {
   border-radius: 5px;
 }
 .profile-menu__link:hover {
-  background-color: #ebebeb;
+  background-color: var(--profile-sidebar-link-hover);
 }
 .profile-menu__icon {
   height: 100%;
